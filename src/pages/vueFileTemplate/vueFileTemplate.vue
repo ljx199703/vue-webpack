@@ -1,12 +1,12 @@
 <template>
-  <div>404 page</div>
+  <div></div>
 </template>
 
 <script>
   export default {
-    name: 'notFoundPage'
+    name: 'vueFileTemplate'
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 </style>
