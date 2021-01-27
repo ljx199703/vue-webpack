@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <router-view />
   </div>
 </template>
@@ -9,5 +9,8 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
+  #app {
+    font-size: 16px;
+  }
 </style>

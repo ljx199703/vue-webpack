@@ -3,6 +3,25 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+export const routesNavMap = {
+  'home': {
+    name: '首页',
+    path: '/home'
+  },
+  'fantasticBorder': {
+    name: '边框动效',
+    path: '/fantasticBorder'
+  },
+  'gradient': {
+    name: '渐变动效',
+    path: '/gradient'
+  },
+  'charge': {
+    name: '充电动效',
+    path: '/charge'
+  },
+}
+
 const routes = [
   {
     path: '/',
@@ -13,7 +32,7 @@ const routes = [
     path: '/home',
     component: () => import('../pages/home/home.vue'),
     meta: {
-      title: 'Home'
+      documentTitle: 'Home'
     },
     beforeEnter: (to, from, next) => {
       console.log('route guard')
@@ -25,7 +44,7 @@ const routes = [
     path: '/fantasticBorder',
     component: () => import('../pages/fantasticBorder/fantasticBorder.vue'),
     meta: {
-      title: 'FantasticBorder'
+      documentTitle: 'FantasticBorder',
     }
   },
   {
@@ -33,7 +52,7 @@ const routes = [
     path: '/gradient',
     component: () => import('../pages/gradient/gradient.vue'),
     meta: {
-      title: 'Gradient'
+      documentTitle: 'Gradient',
     }
   },
   {
@@ -41,7 +60,7 @@ const routes = [
     path: '/charge',
     component: () => import('../pages/charge/charge.vue'),
     meta: {
-      title: 'Charge'
+      documentTitle: 'Charge',
     }
   },
   {
@@ -49,7 +68,7 @@ const routes = [
     path: '/404',
     component: () => import('../pages/404/404.vue'),
     meta: {
-      title: '404'
+      documentTitle: '404'
     }
   },
   {
@@ -57,6 +76,13 @@ const routes = [
     redirect: '/404'
   }
 ]
+// routes添加navTitle
+routes.forEach(route => {
+  if (routesNavMap[route?.name]) {
+    route?.meta || (route.meta = {})
+    routesNavMap[route.name].name && (route.meta.navTitle = routesNavMap[route.name].name)
+  }
+})
 
 export default new VueRouter({
   mode: 'hash',

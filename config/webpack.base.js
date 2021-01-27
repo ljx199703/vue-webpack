@@ -117,6 +117,11 @@ const config = {
           },
           {
             loader: 'babel-loader',
+            options: {
+              plugins: [
+                '@babel/plugin-proposal-optional-chaining'
+              ]
+            },
           }
         ]
       }
