@@ -5,7 +5,6 @@ import './styles/normalize.scss'
 import './styles/theme.scss'
 
 router.beforeEach((to, from, next) => {
-  console.log('global guard')
   next()
 })
 

@@ -1,10 +1,9 @@
 <template>
-  <div></div>
 </template>
 
 <script>
   export default {
-    name: 'vueFileTemplate'
+    name: '__PAGE_NAME__'
   }
 </script>
 

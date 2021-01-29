@@ -1,26 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import home from '../pages/home/home.vue'
 
 Vue.use(VueRouter)
-
-export const routesNavMap = {
-  'home': {
-    name: '首页',
-    path: '/home'
-  },
-  'fantasticBorder': {
-    name: '边框动效',
-    path: '/fantasticBorder'
-  },
-  'gradient': {
-    name: '渐变动效',
-    path: '/gradient'
-  },
-  'charge': {
-    name: '充电动效',
-    path: '/charge'
-  },
-}
 
 const routes = [
   {
@@ -30,37 +12,12 @@ const routes = [
   {
     name: 'home',
     path: '/home',
-    component: () => import('../pages/home/home.vue'),
+    component: home,
     meta: {
       documentTitle: 'Home'
     },
     beforeEnter: (to, from, next) => {
-      console.log('route guard')
       next()
-    }
-  },
-  {
-    name: 'fantasticBorder',
-    path: '/fantasticBorder',
-    component: () => import('../pages/fantasticBorder/fantasticBorder.vue'),
-    meta: {
-      documentTitle: 'FantasticBorder',
-    }
-  },
-  {
-    name: 'gradient',
-    path: '/gradient',
-    component: () => import('../pages/gradient/gradient.vue'),
-    meta: {
-      documentTitle: 'Gradient',
-    }
-  },
-  {
-    name: 'charge',
-    path: '/charge',
-    component: () => import('../pages/charge/charge.vue'),
-    meta: {
-      documentTitle: 'Charge',
     }
   },
   {
@@ -76,13 +33,6 @@ const routes = [
     redirect: '/404'
   }
 ]
-// routes添加navTitle
-routes.forEach(route => {
-  if (routesNavMap[route?.name]) {
-    route?.meta || (route.meta = {})
-    routesNavMap[route.name].name && (route.meta.navTitle = routesNavMap[route.name].name)
-  }
-})
 
 export default new VueRouter({
   mode: 'hash',

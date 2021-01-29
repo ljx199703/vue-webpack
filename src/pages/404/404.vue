@@ -1,12 +1,12 @@
 <template>
-  <div>404 page</div>
+  <div class="404">404</div>
 </template>
 
 <script>
   export default {
-    name: 'notFoundPage'
+    name: '404'
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 </style>
