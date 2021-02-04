@@ -11,6 +11,6 @@
 
 <style lang="scss" scoped>
   #app {
-    font-size: 16px;
+    font-size: .3rem;
   }
 </style>

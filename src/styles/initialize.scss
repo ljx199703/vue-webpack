@@ -1,0 +1,25 @@
+/* 以IPad Pro的宽度即1024px作为移动端和PC端的断点 */
+@media screen and (max-width: 1024px) {
+  /* 默认设计稿为标准格式, 即750*1334 */
+  html {
+      font-size: calc(100vw / 7.5);
+  }
+}
+
+/* 横屏样式 */
+@media all and (orientation: landscape) {}
+
+/* 竖屏样式 */
+@media all and (orientation: portrait) {}
+
+* {
+  /* 禁止屏幕旋转时字体调整 */
+  text-size-adjust: 100%;
+}
+
+body {
+  /* IOS系统非body元素滚动可能存在卡顿, 调用系统原生滚动优化 */
+  -webkit-overflow-scrolling: touch;
+  /* 动态计算滚动条宽度并设置为padding-right以防止滚动条反复显隐时屏幕抖动 */
+  padding-right: calc(100vw - 100%);
+}

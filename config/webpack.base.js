@@ -23,9 +23,9 @@ const config = {
           {
             loader: 'url-loader',
             options: {
+              esModule: false,
               limit: 10 * 1024,
-              outputPath: '/image',
-              name: '[name].[hash:5].[ext]'
+              name: 'images/[name].[hash:5].[ext]'
             }
           }
         ]
@@ -36,8 +36,7 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: '/font',
-              name: '[name].[contenthash:5].[ext]'
+              name: 'fonts/[name].[contenthash:5].[ext]'
             }
           }
         ]
@@ -48,8 +47,7 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: '/media',
-              name: '[name].[contenthash:5].[ext]'
+              name: 'media/[name].[contenthash:5].[ext]'
             }
           }
         ]
